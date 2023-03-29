@@ -3,9 +3,13 @@ const EAddr = document.getElementById('input-address');
 const Amount = document.getElementById('input-amount');
 const OTP = document.getElementById('input-otp');
 const sendBTN = document.getElementById('sendBTN');
+
+//A form of way to prevent certain methods of submitting without valid entries
+//All field valid > able to click
 sendBTN.disabled = true;
 
 function validateForm() {
+  //check if any field empty
     if (EAddr.value == "") {
       //alert("ETH Address must be filled out");
       return false;
@@ -26,7 +30,7 @@ function validateForm() {
 
 EAddr.addEventListener('keyup', function (event) {
     isValidAddress = EAddr.value;
-  
+    //Regex for ETH address
     var rege = /^0x[a-fA-F0-9]{40}$/;
     
       if (isValidAddress.match(rege)) {
@@ -37,7 +41,7 @@ EAddr.addEventListener('keyup', function (event) {
   });
   Amount.addEventListener('keyup', function (event) {
     validAmount = Amount.value;
-  
+    //regex for positive num
     var rege = /^\d+$/;
     
       if (validAmount.match(rege)) {
@@ -49,6 +53,7 @@ EAddr.addEventListener('keyup', function (event) {
     
   OTP.addEventListener('keyup', function (event) {
     validOTP = OTP.value;
+    //regex for positive num
     var rege = /^\d+$/;
     
     if (validOTP.match(rege)) {
