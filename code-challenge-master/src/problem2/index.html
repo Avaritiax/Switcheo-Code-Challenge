@@ -3,26 +3,47 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+  <div class="container">
+    <h2>Fancy Form</h2>
 
-    <label for="input-otp">OTP Authentication</label>
+
+    <form name="myForm" id="myForm" 
+    onsubmit="return false" 
+    >
+    <br>
+    <p>All Fields must be filled before being able to submit</p>
+      <div class="form-group">
+        <label for="input-address">ETH Address</label>
+    <input id="input-address"/>
+      </div>
+
+      <div class="form-group">
+      <label for="input-amount">Amount to send</label>
+    <input type="number" id="input-amount" />
+  </div>
+      <div class="form-group">
+        <label for="input-otp">OTP Authentication</label>
     <input type="number" id="input-otp" />
+      </div>
+    
+  
+      <button class="btn btn-default" id="sendBTN" onclick="validateForm()">SEND TOKENS</button>
+    </form>
+  </div>
 
-    <button>SEND TOKENS</button>
-  </form>
+
+  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+
   <script src="script.js"></script>
 </body>
 
